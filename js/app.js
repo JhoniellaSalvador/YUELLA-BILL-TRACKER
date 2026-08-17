@@ -180,11 +180,11 @@ if(
 ){
 
     if(
-        typeof window.loadReportsPage ===
+        typeof window.loadReports ===
         "function"
     ){
 
-        window.loadReportsPage();
+        window.loadReports();
 
     }
 
@@ -8193,6 +8193,12 @@ if(unpaidElement){
 
 }
 
+/* ==========================================================
+   EXPOSE REPORTS LOADER
+========================================================== */
+
+window.loadReports =
+    loadReports;
 
 /* ==========================================================
    RENDER CATEGORY BREAKDOWN
