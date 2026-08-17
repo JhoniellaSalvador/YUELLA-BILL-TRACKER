@@ -376,11 +376,25 @@ if(pdfSetting){
 
             if(pdfReportsPage){
 
-                pdfReportsPage.classList.add(
-                    "active"
-                );
+    pdfReportsPage.classList.add(
+        "active"
+    );
 
-            }
+
+    /* ==========================================
+       LOAD PDF REPORTS
+    ========================================== */
+
+    if(
+        typeof window.loadPDFReports ===
+        "function"
+    ){
+
+        await window.loadPDFReports();
+
+    }
+
+}
 
 
             /* ==========================================
@@ -9081,6 +9095,12 @@ if(!user){
 
 }
 
+/* ==========================================================
+   EXPOSE PDF REPORTS LOADER
+========================================================== */
+
+window.loadPDFReports =
+    loadPDFReports;
 
 /* ==========================================================
    RENDER PDF REPORTS
