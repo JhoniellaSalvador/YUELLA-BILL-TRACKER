@@ -1820,6 +1820,20 @@ function initializeExpenseForm(){
 
 
 /* ==================================================
+   REFRESH DASHBOARD FIRST
+================================================== */
+
+if(
+    typeof loadDashboardData ===
+    "function"
+){
+
+    await loadDashboardData();
+
+}
+
+
+/* ==================================================
    REFRESH EXPENSES
 ================================================== */
 
@@ -1829,20 +1843,6 @@ if(
 ){
 
     await loadExpensesPage();
-
-}
-
-
-/* ==================================================
-   REFRESH DASHBOARD
-================================================== */
-
-if(
-    typeof loadDashboardData ===
-    "function"
-){
-
-    await loadDashboardData();
 
 }
 
