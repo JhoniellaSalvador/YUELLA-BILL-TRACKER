@@ -180,11 +180,11 @@ if(
 ){
 
     if(
-        typeof window.loadReportsPage ===
+        typeof loadReports ===
         "function"
     ){
 
-        window.loadReportsPage();
+        await loadReports();
 
     }
 
