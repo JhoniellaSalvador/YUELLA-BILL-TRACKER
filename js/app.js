@@ -390,7 +390,7 @@ if(pdfSetting){
         "function"
     ){
 
-        await window.loadPDFReports();
+        window.loadPDFReports();
 
     }
 
