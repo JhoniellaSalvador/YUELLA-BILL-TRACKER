@@ -7850,37 +7850,23 @@ async function loadReports(){
         }
 
 
-        /* ==================================================
-           GET USER
-        ================================================== */
+/* ==================================================
+   WAIT FOR CURRENT USER
+================================================== */
 
-        const {
-            data:userData,
-            error:userError
-        } =
-            await supabaseClient
-                .auth
-                .getUser();
+const user =
+    await waitForSupabaseSession();
 
 
-        if(
-            userError ||
-            !userData?.user
-        ){
+if(!user){
 
-            console.error(
-                "Reports user error:",
-                userError
-            );
+    console.log(
+        "No logged-in user for reports."
+    );
 
-            return;
+    return;
 
-        }
-
-
-        const user =
-            userData.user;
-
+}
 
         /* ==================================================
            GET MONTH RANGE
