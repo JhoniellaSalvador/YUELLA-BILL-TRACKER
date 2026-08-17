@@ -8867,38 +8867,22 @@ async function loadPDFReports(){
 
 
         /* ==================================================
-           GET CURRENT USER
-        ================================================== */
+   WAIT FOR CURRENT USER
+================================================== */
 
-        const {
-            data: userData,
-            error: userError
-        } =
-            await supabaseClient.auth.getUser();
+const user =
+    await waitForSupabaseSession();
 
 
-        if(userError){
+if(!user){
 
-            console.error(
-                "PDF Reports user error:",
-                userError
-            );
+    console.log(
+        "No logged-in user for PDF reports."
+    );
 
-            return;
+    return;
 
-        }
-
-
-        const user =
-            userData?.user;
-
-
-        if(!user){
-
-            return;
-
-        }
-
+}
 
         /* ==================================================
            GET EXPENSES
