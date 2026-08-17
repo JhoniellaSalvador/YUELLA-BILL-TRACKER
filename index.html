@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <!-- ======================================================
+         PWA
+    ======================================================= -->
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <meta
+        name="mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black"
+    >
+
+    <meta
+        name="apple-mobile-web-app-title"
+        content="Yuella"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="assets/icon-192.png"
+    >
+
+
+    <title>
+        Yuella Bill Tracker
+    </title>
+
+
+    <!-- ======================================================
+         CSS
+    ======================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+
+    <!-- ==========================================================
+     YUELLA BILL TRACKER
+     AUTHENTICATION
+========================================================== -->
+
+
+<!-- ==========================================================
+     AUTH CONTAINER
+========================================================== -->
+
+<div id="authContainer">
+
+
+    <!-- ======================================================
+         LOGIN PAGE
+    ======================================================= -->
+
+    <section
+        id="loginPage"
+        class="auth-page active"
+    >
+
+        <div class="auth-content">
+
+
+            <!-- ==================================================
+                 LOGO
+            =================================================== -->
+
+            <div class="auth-logo">
+
+                <img
+                    src="assets/yuella-logo.png"
+                    alt="Yuella Bill Tracker"
+                >
+
+            </div>
+
+
+            <!-- ==================================================
+                 TITLE
+            =================================================== -->
+
+            <h1 class="auth-title">
+                Welcome Back
+            </h1>
+
+            <p class="auth-subtitle">
+                Sign in to manage your bills
+            </p>
+
+
+            <!-- ==================================================
+                 LOGIN FORM
+            =================================================== -->
+
+            <form
+                id="loginForm"
+                class="auth-form"
+            >
+
+
+                <!-- USERNAME -->
+
+                <div class="auth-form-group">
+
+                    <label for="loginUsername">
+                            Username
+                    </label>
+
+                <input
+                    type="text"
+                    id="loginUsername"
+                    class="auth-input"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="auth-form-group">
+
+                    <label
+                        for="loginPassword"
+                    >
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="auth-primary-button"
+                >
+                    Login
+                </button>
+
+
+                <!-- LOGIN MESSAGE -->
+
+                <p
+                    id="loginMessage"
+                    class="auth-message"
+                ></p>
+
+
+            </form>
+
+
+            <!-- ==================================================
+                 REGISTER LINK
+            =================================================== -->
+
+            <div class="auth-switch">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <button
+                    type="button"
+                    id="showRegisterButton"
+                    class="auth-link-button"
+                >
+                    Create Account
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         REGISTER PAGE
+    ======================================================= -->
+
+    <section
+        id="registerPage"
+        class="auth-page"
+    >
+
+        <div class="auth-content">
+
+
+            <!-- ==================================================
+                 LOGO
+            =================================================== -->
+
+            <div class="auth-logo">
+
+                <img
+                    src="assets/yuella-logo.png"
+                    alt="Yuella Bill Tracker"
+                >
+
+            </div>
+
+
+            <!-- ==================================================
+                 TITLE
+            =================================================== -->
+
+            <h1 class="auth-title">
+                Create Account
+            </h1>
+
+            <p class="auth-subtitle">
+                Start tracking your bills
+            </p>
+
+
+            <!-- ==================================================
+                 REGISTER FORM
+            =================================================== -->
+
+            <form
+                id="registerForm"
+                class="auth-form"
+            >
+
+
+                <!-- USERNAME -->
+
+                <div class="auth-form-group">
+
+    <label
+        for="registerUsername"
+    >
+        Username
+    </label>
+
+    <input
+        type="text"
+        id="registerUsername"
+        class="auth-input"
+        placeholder="Create a username"
+        autocomplete="username"
+        required
+    >
+
+</div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="auth-form-group">
+
+                    <label
+                        for="registerPassword"
+                    >
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="auth-form-group">
+
+                    <label
+                        for="registerConfirmPassword"
+                    >
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerConfirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    type="submit"
+                    id="registerButton"
+                    class="auth-primary-button"
+                >
+                    Create Account
+                </button>
+
+
+                <!-- REGISTER MESSAGE -->
+
+                <p
+                    id="registerMessage"
+                    class="auth-message"
+                ></p>
+
+
+            </form>
+
+
+            <!-- ==================================================
+                 LOGIN LINK
+            =================================================== -->
+
+            <div class="auth-switch">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <button
+                    type="button"
+                    id="showLoginButton"
+                    class="auth-link-button"
+                >
+                    Login
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</div>
+
+    <!-- ======================================================
+         APP
+    ======================================================= -->
+
+    <div id="app">
+
+        <!-- ==================================================
+             MAIN CONTENT
+        =================================================== -->
+
+        <main id="mainContent">
+
+<!-- =================================================
+     HOME / DASHBOARD
+================================================== -->
+
+<section
+    id="homePage"
+    class="app-page active"
+>
+
+    <!-- =============================================
+     HOME HEADER
+============================================= -->
+
+<header class="home-header">
+
+    <div class="home-header-text">
+
+        <h1 class="yuella-brand-title">
+
+            <span class="yuella-brand-icon">
+                ⌂
+            </span>
+
+            YUELLA BILL TRACKER
+
+        </h1>
+
+        <p class="yuella-brand-subtitle">
+            Bills and Expenses
+        </p>
+
+    </div>
+
+    </header>
+
+    <!-- =============================================
+         MONTH SELECTOR
+    ============================================== -->
+
+    <div class="month-selector">
+
+    <button
+        type="button"
+        class="month-arrow"
+        id="previousMonthButton"
+        aria-label="Previous month"
+    >
+        ‹
+    </button>
+
+    <div class="month-current">
+
+        <span id="dashboardSelectedMonth">
+            August 2026
+        </span>
+
+    </div>
+
+    <button
+        type="button"
+        class="month-arrow"
+        id="nextMonthButton"
+        aria-label="Next month"
+    >
+        ›
+    </button>
+
+</div>
+
+    <!-- =============================================
+         CURRENCY TOTALS
+    ============================================== -->
+
+    <section class="currency-section">
+
+
+        <!-- =========================================
+             JAPAN / JPY
+        ========================================== -->
+
+        <article
+            class="currency-card currency-card-jpy"
+        >
+
+            <div class="currency-card-top">
+
+
+                <div class="currency-country">
+
+                    <span class="country-icon">
+                        🇯🇵
+                    </span>
+
+
+                    <div>
+
+                        <span class="currency-country-name">
+                            Japan
+                        </span>
+
+                        <span class="currency-code">
+                            JPY
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="currency-symbol">
+                    ¥
+                </span>
+
+            </div>
+
+
+            <div
+                class="currency-total"
+                id="dashboardJPYTotal"
+            >
+                ¥0
+            </div>
+
+            <span class="currency-description">
+                Total expenses this month
+            </span>
+
+        </article>
+
+        <!-- =========================================
+             PHILIPPINES / PHP
+        ========================================== -->
+
+        <article
+            class="currency-card currency-card-php"
+        >
+
+            <div class="currency-card-top">
+
+
+                <div class="currency-country">
+
+                    <span class="country-icon">
+                        🇵🇭
+                    </span>
+
+
+                    <div>
+
+                        <span class="currency-country-name">
+                            Philippines
+                        </span>
+
+                        <span class="currency-code">
+                            PHP
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <span class="currency-symbol">
+                    ₱
+                </span>
+
+            </div>
+
+            <div
+                class="currency-total"
+                id="dashboardPHPTotal"
+            >
+                ₱0
+            </div>
+
+            <span class="currency-description">
+                Total expenses this month
+            </span>
+
+        </article>
+
+    </section>
+
+<!-- ==================================================
+     MONTHLY OVERVIEW
+================================================== -->
+
+<section
+    class="dashboard-section monthly-overview-section"
+>
+
+    <!-- ==================================================
+         SECTION HEADER
+    ================================================== -->
+
+    <div class="section-heading">
+
+
+        <h2>
+            Monthly Overview
+        </h2>
+
+        <!-- ==============================================
+             CURRENCY SELECTOR
+        =============================================== -->
+
+        <div
+            class="monthly-currency-selector"
+        >
+
+            <button
+                type="button"
+                class="monthly-currency-button active"
+                data-currency="JPY"
+            >
+                🇯🇵 JPY
+            </button>
+
+            <button
+                type="button"
+                class="monthly-currency-button"
+                data-currency="PHP"
+            >
+                🇵🇭 PHP
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ==================================================
+         MONTHLY OVERVIEW CARD
+    ================================================== -->
+
+    <div
+        class="monthly-overview-card"
+    >
+
+        <!-- ==============================================
+             CHART HEADER
+        =============================================== -->
+
+        <div
+            class="monthly-chart-header"
+        >
+
+            <div
+                class="monthly-chart-total"
+            >
+
+                <span>
+                    Total Spending
+                </span>
+
+                <strong
+                    id="monthlyOverviewTotal"
+                >
+                    ¥0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- ==================================================
+             MONTHLY CHART
+        ================================================== -->
+
+        <div
+            class="monthly-chart"
+        >
+
+            <!-- ==============================================
+                 Y AXIS
+            =============================================== -->
+
+            <div
+                class="chart-y-axis"
+                id="monthlyChartYAxis"
+            >
+
+                <span>
+                    ¥200k
+                </span>
+
+                <span>
+                    ¥150k
+                </span>
+
+                <span>
+                    ¥100k
+                </span>
+
+                <span>
+                    ¥50k
+                </span>
+
+                <span>
+                    ¥0
+                </span>
+
+            </div>
+
+            <!-- ==============================================
+                 CHART AREA
+            =============================================== -->
+
+            <div
+                class="chart-area"
+            >
+
+                <!-- ==========================================
+                     GRID
+                =========================================== -->
+
+                <div
+                    class="chart-grid"
+                >
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- ==========================================
+                     LINE CHART
+                =========================================== -->
+
+                <svg
+                    class="monthly-line-chart"
+                    viewBox="0 0 320 180"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                >
+
+                    <defs>
+
+                        <linearGradient
+                            id="monthlyChartGradient"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                        >
+
+                            <stop
+                                offset="0%"
+                                stop-color="#D4AF37"
+                                stop-opacity="0.30"
+                            />
+
+                            <stop
+                                offset="100%"
+                                stop-color="#D4AF37"
+                                stop-opacity="0"
+                            />
+
+                        </linearGradient>
+
+                    </defs>
+
+                    <!-- ======================================
+                         AREA
+                    ======================================= -->
+
+                    <path
+                        class="monthly-chart-fill"
+                        d="
+                            M 15 145
+                            L 80 100
+                            L 145 120
+                            L 210 75
+                            L 255 75
+                            L 305 25
+                            L 305 160
+                            L 15 160
+                            Z
+                        "
+                    />
+
+                    <!-- ======================================
+                         LINE
+                    ======================================= -->
+
+                    <path
+                        class="monthly-chart-line"
+                        d="
+                            M 15 145
+                            L 80 100
+                            L 145 120
+                            L 210 75
+                            L 255 75
+                            L 305 25
+                        "
+                    />
+
+                </svg>
+
+                <!-- ==========================================
+                     MONTH LABELS
+                =========================================== -->
+
+                <div
+                    class="chart-months"
+                >
+
+                    <span>
+                        Mar
+                    </span>
+
+                    <span>
+                        Apr
+                    </span>
+
+                    <span>
+                        May
+                    </span>
+
+                    <span>
+                        Jun
+                    </span>
+
+                    <span>
+                        Jul
+                    </span>
+
+                    <span>
+                        Aug
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =============================================
+         RECENT EXPENSES
+    ============================================== -->
+
+    <section class="dashboard-section">
+
+
+        <div class="section-heading section-heading-action">
+
+            <h2>
+                Recent Expenses
+            </h2>
+
+            <button
+                type="button"
+                class="section-link"
+                data-page="expensesPage"
+            >
+                View All
+            </button>
+
+        </div>
+
+        <div
+            id="recentExpensesList"
+            class="dashboard-list"
+        >
+
+            <!-- EMPTY STATE -->
+
+            <div
+                class="empty-dashboard-card"
+                id="recentExpensesEmpty"
+            >
+
+                <div class="empty-icon">
+                    ₱
+                </div>
+
+                <strong>
+                    No expenses yet
+                </strong>
+
+                <span>
+                    Add your first expense.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- =================================================
+     ADD EXPENSE PAGE
+================================================== -->
+
+<section
+    id="addExpensePage"
+    class="app-page"
+>
+
+    <!-- =============================================
+         PAGE HEADER
+    ============================================== -->
+
+    <div class="page-header">
+
+    <div>
+
+        <h1>
+            Add Expense
+        </h1>
+
+    </div>
+
+</div>
+
+    <!-- =============================================
+         EXPENSE FORM
+    ============================================== -->
+
+    <form
+        id="expenseForm"
+        class="expense-form"
+    >
+
+        <!-- =========================================
+             COUNTRY
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseCountry"
+            >
+                Country
+            </label>
+
+            <select
+                id="expenseCountry"
+                class="form-select"
+                required
+            >
+
+                <option
+                    value=""
+                    selected
+                    disabled
+                >
+                    Select country
+                </option>
+
+                <option value="JP">
+                    🇯🇵 Japan
+                </option>
+
+                <option value="PH">
+                    🇵🇭 Philippines
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- =========================================
+             CATEGORY
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseCategory"
+            >
+                Category
+            </label>
+
+<select
+    id="expenseCategory"
+    class="form-select"
+    required
+>
+
+    <option
+        value=""
+        selected
+        disabled
+    >
+        Select category
+    </option>
+
+</select>
+
+        </div>
+
+ <!-- =========================================
+     OTHER INPUT
+========================================== -->
+
+<div class="form-group">
+
+    <label
+        class="form-label"
+        for="expenseOther"
+    >
+        Other Input
+    </label>
+
+    <input
+        type="text"
+        id="expenseOther"
+        class="form-input"
+        placeholder="e.g. Shopping, Gift, Other bill"
+        autocomplete="off"
+    >
+
+</div>
+
+        <!-- =========================================
+             AMOUNT
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseAmount"
+            >
+                Amount
+            </label>
+
+            <input
+                type="number"
+                id="expenseAmount"
+                class="form-input"
+                placeholder="0"
+                min="0"
+                step="0.01"
+                inputmode="decimal"
+                required
+            >
+
+        </div>
+
+        <!-- =========================================
+             CURRENCY
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseCurrency"
+            >
+                Currency
+            </label>
+
+            <select
+                id="expenseCurrency"
+                class="form-select"
+                required
+            >
+
+                <option
+                    value=""
+                    selected
+                    disabled
+                >
+                    Select currency
+                </option>
+
+                <option value="JPY">
+                    ¥ Japanese Yen
+                </option>
+
+                <option value="PHP">
+                    ₱ Philippine Peso
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- =========================================
+             EXPENSE DATE
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseDate"
+            >
+                Expense Date
+            </label>
+
+            <input
+                type="date"
+                id="expenseDate"
+                class="form-input"
+                required
+            >
+
+        </div>
+
+        <!-- =========================================
+             PAYMENT STATUS
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseStatus"
+            >
+                Payment Status
+            </label>
+
+            <select
+                id="expenseStatus"
+                class="form-select"
+                required
+            >
+
+                <option value="unpaid">
+                    Unpaid
+                </option>
+
+                <option value="paid">
+                    Paid
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- =========================================
+             NOTES
+        ========================================== -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="expenseNotes"
+            >
+                Notes
+            </label>
+
+            <textarea
+                id="expenseNotes"
+                class="form-textarea"
+                placeholder="Optional notes..."
+            ></textarea>
+
+        </div>
+
+        <!-- =========================================
+             SAVE BUTTON
+        ========================================== -->
+
+        <button
+            type="submit"
+            id="saveExpenseButton"
+            class="primary-button"
+        >
+
+            Save Expense
+
+        </button>
+
+        <!-- =========================================
+             CANCEL BUTTON
+        ========================================== -->
+
+        <button
+            type="button"
+            id="cancelExpenseButton"
+            class="secondary-button"
+            style="margin-top:10px;"
+        >
+
+            Cancel
+
+        </button>
+
+    </form>
+
+</section>
+
+    <!-- EXPENSES PAGE -->
+
+<section
+    id="expensesPage"
+    class="app-page"
+>
+
+    <div class="page-header">
+
+    <div>
+
+        <h1>
+            Expenses
+        </h1>
+
+    </div>
+
+</div>
+
+
+    <div class="search-box">
+
+        <span class="search-icon">
+            ⌕
+        </span>
+
+        <input
+            type="search"
+            placeholder="Search expenses"
+            id="expenseSearch"
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <div class="filter-row">
+
+        <button
+            type="button"
+            class="filter-button active"
+            data-filter="all"
+        >
+            All
+        </button>
+
+
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="JPY"
+        >
+            JPY
+        </button>
+
+
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="PHP"
+        >
+            PHP
+        </button>
+
+
+        <button
+            type="button"
+            class="filter-button"
+            data-filter="unpaid"
+        >
+            Unpaid
+        </button>
+
+    </div>
+
+
+    <div
+        id="expensesList"
+        class="expenses-list"
+    >
+
+        <div class="empty-page-state">
+
+            <div class="empty-page-icon">
+                ₿
+            </div>
+
+            <h2>
+                No expenses yet
+            </h2>
+
+            <p>
+                Your expenses will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================================
+     REPORTS PAGE
+================================================== -->
+
+<section
+    id="reportsPage"
+    class="app-page"
+>
+
+    <!-- =============================================
+         PAGE HEADER
+    ============================================= -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+                Reports
+            </h1>
+
+        </div>
+
+    </div>
+
+    <!-- =============================================
+         MONTH SELECTOR
+    ============================================= -->
+
+    <div class="report-month-selector">
+
+        <button
+            type="button"
+            class="report-month-arrow"
+            id="reportPreviousMonth"
+            aria-label="Previous month"
+        >
+            ‹
+        </button>
+
+        <div class="report-month-current">
+
+            <span id="reportMonthLabel">
+                August 2026
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            class="report-month-arrow"
+            id="reportNextMonth"
+            aria-label="Next month"
+        >
+            ›
+        </button>
+
+    </div>
+
+    <!-- =============================================
+         TOTAL EXPENSES
+    ============================================= -->
+
+    <section class="report-section">
+
+        <div class="report-section-title">
+            TOTAL EXPENSES
+        </div>
+
+        <div class="report-currency-grid">
+
+            <!-- JAPAN -->
+
+            <article class="report-currency-card">
+
+                <div class="report-currency-country">
+
+                    <div>
+
+                        <strong>
+                            Japan
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="reportJPYTotal"
+                    class="report-currency-total"
+                >
+                    ¥0
+                </div>
+
+            </article>
+
+            <!-- PHILIPPINES -->
+
+            <article class="report-currency-card">
+
+                <div class="report-currency-country">
+
+                    <div>
+
+                        <strong>
+                            Philippines
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="reportPHPTotal"
+                    class="report-currency-total"
+                >
+                    ₱0
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================
+         PAYMENT SUMMARY
+    ============================================= -->
+
+    <section class="report-section">
+
+        <div class="report-section-title">
+            PAYMENT SUMMARY
+        </div>
+
+
+        <div class="report-payment-grid">
+
+
+            <article class="report-payment-card">
+
+                <span>
+                    Paid
+                </span>
+
+                <strong id="reportPaidTotal">
+                    ¥0
+                </strong>
+
+            </article>
+
+
+            <article class="report-payment-card">
+
+                <span>
+                    Unpaid
+                </span>
+
+                <strong id="reportUnpaidTotal">
+                    ¥0
+                </strong>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================
+         MONTHLY BREAKDOWN
+    ============================================= -->
+
+    <section class="report-section">
+
+        <div class="report-section-title">
+            MONTHLY BREAKDOWN
+        </div>
+
+
+        <!-- JAPAN -->
+
+        <div class="report-breakdown-group">
+
+            <h3>
+                🇯🇵 Japan
+            </h3>
+
+
+            <div
+                id="reportJPBreakdown"
+                class="report-breakdown-list"
+            >
+
+                <!-- JS WILL LOAD CATEGORIES HERE -->
+
+            </div>
+
+        </div>
+
+
+        <!-- PHILIPPINES -->
+
+        <div class="report-breakdown-group">
+
+            <h3>
+                🇵🇭 Philippines
+            </h3>
+
+
+            <div
+                id="reportPHBreakdown"
+                class="report-breakdown-list"
+            >
+
+                <!-- JS WILL LOAD CATEGORIES HERE -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =============================================
+         MONTHLY COMPARISON
+    ============================================= -->
+
+    <section class="report-section">
+
+        <div class="report-section-title">
+            MONTHLY COMPARISON
+        </div>
+
+
+        <div
+            id="reportMonthlyComparison"
+            class="report-monthly-comparison"
+        >
+
+            <!-- JS WILL LOAD MONTHS HERE -->
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- =================================================
+     SETTINGS PAGE
+================================================== -->
+
+<section
+    id="settingsPage"
+    class="app-page"
+>
+
+    <!-- =============================================
+         PAGE HEADER
+    ============================================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>
+                Settings
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- =============================================
+         SETTINGS LIST
+    ============================================== -->
+
+    <div class="settings-list">
+
+        <!-- =============================================
+             PREFERENCES
+        ============================================== -->
+
+        <section class="settings-preferences-section">
+
+            <div class="settings-section-title">
+
+                Preferences
+
+            </div>
+
+            <!-- LANGUAGE -->
+
+            <button
+                type="button"
+                class="settings-item"
+                id="languageSetting"
+            >
+
+                <span class="settings-item-icon">
+                    🌐
+                </span>
+
+                <span class="settings-item-text">
+
+                    <strong>
+                        Language
+                    </strong>
+
+                    <small>
+                        English
+                    </small>
+
+                </span>
+
+                <span class="settings-arrow">
+                    ›
+                </span>
+
+            </button>
+
+            <!-- CURRENCY -->
+
+            <button
+                type="button"
+                class="settings-item"
+                id="currencySetting"
+            >
+
+                <span class="settings-item-icon">
+                    💱
+                </span>
+
+                <span class="settings-item-text">
+
+                    <strong>
+                        Currency
+                    </strong>
+
+                    <small>
+                        JPY / PHP
+                    </small>
+
+                </span>
+
+                <span class="settings-arrow">
+                    ›
+                </span>
+
+            </button>
+
+            <!-- PDF REPORTS -->
+
+            <button
+                type="button"
+                class="settings-item"
+                id="pdfSetting"
+                data-page="pdfReportsPage"
+            >
+
+                <span class="settings-item-icon">
+                    📄
+                </span>
+
+                <span class="settings-item-text">
+
+                    <strong>
+                        PDF Reports
+                    </strong>
+
+                    <small>
+                        Export expense records
+                    </small>
+
+                </span>
+
+                <span class="settings-arrow">
+                    ›
+                </span>
+
+            </button>
+
+        </section>
+
+        <!-- =============================================
+             ACCOUNT
+        ============================================== -->
+
+        <section class="settings-account-section">
+
+            <div class="settings-section-title">
+
+                Account
+
+            </div>
+
+            <!-- CHANGE PASSWORD -->
+
+            <button
+                type="button"
+                class="settings-item"
+                id="changePasswordButton"
+            >
+                <span class="settings-item-icon">
+                    🔐
+                </span>
+
+                <span class="settings-item-text">
+
+                    <strong>
+                        Change Password
+                    </strong>
+
+                    <small>
+                        Update your account password
+                    </small>
+
+                </span>
+
+                <span class="settings-arrow">
+                    ›
+                </span>
+
+            </button>
+
+            <!-- LOG OUT -->
+
+            <button
+                type="button"
+                class="settings-item settings-logout"
+                id="logoutButton"
+            >
+
+                <span class="settings-item-icon">
+                    🚪
+                </span>
+
+                <span class="settings-item-text">
+
+                    <strong>
+                        Log Out
+                    </strong>
+
+                    <small>
+                        Sign out of your account
+                    </small>
+
+                </span>
+
+                <span class="settings-arrow">
+                    ›
+                </span>
+
+            </button>
+
+        </section>
+
+    </div>
+
+</section>
+
+<!-- =================================================
+     PDF REPORTS PAGE
+================================================== -->
+
+<section
+    id="pdfReportsPage"
+    class="app-page"
+>
+
+<!-- =============================================
+     PAGE HEADER
+============================================= -->
+
+<header class="profile-page-header">
+
+    <button
+    type="button"
+    id="pdfReportsBackButton"
+    class="profile-back-button"
+    aria-label="Back to Settings"
+>
+
+    <span class="pdf-back-arrow"></span>
+
+</button>
+
+
+    <div>
+
+        <h1>
+            PDF Reports
+        </h1>
+
+        <p>
+            Download your monthly reports
+        </p>
+
+    </div>
+
+</header>
+
+    <!-- =============================================
+         SEARCH
+    ============================================= -->
+
+    <div class="pdf-reports-search">
+
+    <span class="pdf-reports-search-icon">
+        ⌕
+    </span>
+
+    <input
+        type="search"
+        id="pdfReportSearch"
+        placeholder="Search reports..."
+        autocomplete="off"
+    >
+
+</div>
+
+
+    <!-- =============================================
+         MONTHLY REPORTS
+    ============================================= -->
+
+    <section class="pdf-reports-section">
+
+        <div class="pdf-reports-section-title">
+
+            <h2>
+                Monthly Reports
+            </h2>
+
+        </div>
+
+
+        <!-- =========================================
+             REPORT LIST
+        ========================================== -->
+
+        <div
+            id="pdfReportsList"
+            class="pdf-reports-list"
+        ></div>
+
+    </section>
+
+</section>
+
+<!-- ==========================================================
+     CHANGE PASSWORD PAGE
+========================================================== -->
+
+<section
+    id="changePasswordPage"
+    class="app-page"
+>
+
+    <div class="settings-subpage-header">
+
+        <button
+    type="button"
+    id="cancelChangePasswordButton"
+    class="settings-back-button"
+    aria-label="Back"
+>
+    ←
+</button>
+
+        <h2>
+            Change Password
+        </h2>
+
+    </div>
+
+    <form
+        id="changePasswordForm"
+        class="change-password-form"
+    >
+
+        <div class="form-group">
+
+            <label
+                for="newPassword"
+            >
+                New Password
+            </label>
+
+            <input
+                type="password"
+                id="newPassword"
+                class="form-input"
+                placeholder="Enter new password"
+                autocomplete="new-password"
+                required
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label
+                for="confirmNewPassword"
+            >
+                Confirm New Password
+            </label>
+
+            <input
+                type="password"
+                id="confirmNewPassword"
+                class="form-input"
+                placeholder="Confirm new password"
+                autocomplete="new-password"
+                required
+            >
+
+        </div>
+
+        <p
+            id="changePasswordMessage"
+            class="auth-message"
+        ></p>
+
+        <button
+            type="submit"
+            id="updatePasswordButton"
+            class="primary-button"
+        >
+            Update Password
+        </button>
+
+    </form>
+
+</section>
+
+</main>
+
+<!-- ==================================================
+     BOTTOM NAVIGATION
+================================================== -->
+
+<nav
+    id="bottomNavigation"
+    class="bottom-navigation"
+>
+
+    <button
+        type="button"
+        class="nav-item active"
+        data-page="homePage"
+    >
+
+        <span class="nav-icon">
+            🏠
+        </span>
+
+        <span class="nav-label">
+            Home
+        </span>
+
+    </button>
+
+    <button
+        type="button"
+        class="nav-item"
+        data-page="expensesPage"
+    >
+
+        <span class="nav-icon">
+            💳
+        </span>
+
+        <span class="nav-label">
+            Expenses
+        </span>
+
+    </button>
+
+    <!-- ==================================================
+         ADD EXPENSE
+    ================================================== -->
+
+    <button
+    type="button"
+    class="bottom-nav-add"
+    id="bottomNavAddExpense"
+    aria-label="Add Expense"
+>
+
+        <span class="bottom-nav-add-icon">
+            +
+        </span>
+
+    </button>
+
+    <button
+        type="button"
+        class="nav-item"
+        data-page="reportsPage"
+    >
+
+        <span class="nav-icon">
+            📊
+        </span>
+
+        <span class="nav-label">
+            Reports
+        </span>
+
+    </button>
+
+    <button
+        type="button"
+        class="nav-item"
+        data-page="settingsPage"
+    >
+
+        <span class="nav-icon">
+            ⚙️
+        </span>
+
+        <span class="nav-label">
+            Settings
+        </span>
+
+    </button>
+
+</nav>
+
+</div>
+
+ <!-- ======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<!-- SUPABASE LIBRARY -->
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<!-- YUELLA SUPABASE CONNECTION -->
+<script
+    src="js/supabase.js"
+></script>
+
+
+<!-- JSPDF LIBRARY -->
+<script
+    src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"
+></script>
+
+
+<!-- YUELLA MAIN APPLICATION -->
+<script
+    src="js/app.js"
+></script>
+
+
+</body>
+
+</html>
