@@ -1819,33 +1819,32 @@ function initializeExpenseForm(){
             }
 
 
-            /* ==================================================
-               REFRESH DASHBOARD
-            ================================================== */
+/* ==================================================
+   REFRESH EXPENSES
+================================================== */
 
-            if(
-                typeof loadDashboardData ===
-                "function"
-            ){
+if(
+    typeof loadExpensesPage ===
+    "function"
+){
 
-                await loadDashboardData();
+    await loadExpensesPage();
 
-            }
+}
 
 
-            /* ==================================================
-               REFRESH EXPENSES
-            ================================================== */
+/* ==================================================
+   REFRESH DASHBOARD
+================================================== */
 
-            if(
-                typeof loadExpensesPage ===
-                "function"
-            ){
+if(
+    typeof loadDashboardData ===
+    "function"
+){
 
-                await loadExpensesPage();
+    await loadDashboardData();
 
-            }
-
+}
 
             /* ==================================================
                HIDE ALL PAGES
