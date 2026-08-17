@@ -4270,6 +4270,48 @@ function showChangePasswordMessage(
 }
 
 /* ==========================================================
+   WAIT FOR SUPABASE SESSION
+========================================================== */
+
+async function waitForSupabaseSession(){
+
+    for(
+        let attempt = 0;
+        attempt < 20;
+        attempt++
+    ){
+
+        const {
+            data
+        } =
+            await supabaseClient.auth.getSession();
+
+
+        if(
+            data?.session?.user
+        ){
+
+            return data.session.user;
+
+        }
+
+
+        await new Promise(
+            resolve =>
+                setTimeout(
+                    resolve,
+                    250
+                )
+        );
+
+    }
+
+
+    return null;
+
+}
+
+/* ==========================================================
    YUELLA BILL TRACKER
    DASHBOARD DATA
 ========================================================== */
@@ -4278,42 +4320,23 @@ async function loadDashboardData(){
 
     try{
 
-        /* ==================================================
-           GET CURRENT USER
-        ================================================== */
+/* ==================================================
+   WAIT FOR CURRENT USER
+================================================== */
 
-        const {
-            data: userData,
-            error: userError
-        } =
-            await supabaseClient.auth.getUser();
+const user =
+    await waitForSupabaseSession();
 
 
-        if(userError){
+if(!user){
 
-            console.error(
-                "Dashboard user error:",
-                userError
-            );
+    console.log(
+        "No logged-in user for dashboard."
+    );
 
-            return;
+    return;
 
-        }
-
-
-        const user =
-            userData?.user;
-
-
-        if(!user){
-
-            console.log(
-                "No logged-in user for dashboard."
-            );
-
-            return;
-
-        }
+}
 
 
         /* ==================================================
