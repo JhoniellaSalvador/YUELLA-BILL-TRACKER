@@ -1820,7 +1820,7 @@ function initializeExpenseForm(){
 
 
 /* ==================================================
-   REFRESH DASHBOARD FIRST
+   REFRESH DASHBOARD
 ================================================== */
 
 if(
@@ -1834,7 +1834,21 @@ if(
 
 
 /* ==================================================
-   REFRESH EXPENSES
+   REFRESH RECENT EXPENSES
+================================================== */
+
+if(
+    typeof loadRecentExpenses ===
+    "function"
+){
+
+    await loadRecentExpenses();
+
+}
+
+
+/* ==================================================
+   REFRESH EXPENSES PAGE
 ================================================== */
 
 if(
