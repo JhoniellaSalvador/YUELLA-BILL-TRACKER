@@ -1954,6 +1954,193 @@ if(
 }
 
 /* ==========================================================
+   EXPENSE DATE PICKER
+   CUSTOM DISPLAY + NATIVE IOS/DESKTOP PICKER
+========================================================== */
+
+function initializeExpenseDatePicker(){
+
+    const dateInput =
+        document.getElementById(
+            "expenseDate"
+        );
+
+
+    const dateButton =
+        document.getElementById(
+            "expenseDateButton"
+        );
+
+
+    const dateText =
+        document.getElementById(
+            "expenseDateText"
+        );
+
+
+    if(
+        !dateInput ||
+        !dateButton ||
+        !dateText
+    ){
+
+        return;
+
+    }
+
+
+    /* ======================================================
+       FORMAT DATE FOR DISPLAY
+    ====================================================== */
+
+    function updateDateDisplay(){
+
+        if(!dateInput.value){
+
+            dateText.textContent =
+                "Select date";
+
+            return;
+
+        }
+
+
+        const parts =
+            dateInput.value.split("-");
+
+
+        if(parts.length !== 3){
+
+            dateText.textContent =
+                "Select date";
+
+            return;
+
+        }
+
+
+        const year =
+            Number(parts[0]);
+
+
+        const month =
+            Number(parts[1]);
+
+
+        const day =
+            Number(parts[2]);
+
+
+        const date =
+            new Date(
+                year,
+                month - 1,
+                day
+            );
+
+
+        if(
+            Number.isNaN(
+                date.getTime()
+            )
+        ){
+
+            dateText.textContent =
+                "Select date";
+
+            return;
+
+        }
+
+
+        dateText.textContent =
+            date.toLocaleDateString(
+                "en-US",
+                {
+                    month:"short",
+                    day:"numeric",
+                    year:"numeric"
+                }
+            );
+
+    }
+
+
+    /* ======================================================
+       OPEN NATIVE DATE PICKER
+    ====================================================== */
+
+    dateButton.addEventListener(
+        "click",
+        event => {
+
+            event.preventDefault();
+
+
+            try{
+
+                if(
+                    typeof dateInput.showPicker ===
+                    "function"
+                ){
+
+                    dateInput.showPicker();
+
+                }
+                else{
+
+                    dateInput.click();
+
+                }
+
+            }
+            catch(error){
+
+                dateInput.click();
+
+            }
+
+        }
+    );
+
+
+    /* ======================================================
+       UPDATE AFTER DATE SELECTION
+    ====================================================== */
+
+    dateInput.addEventListener(
+        "change",
+        () => {
+
+            updateDateDisplay();
+
+        }
+    );
+
+
+    /* ======================================================
+       INITIAL DISPLAY
+    ====================================================== */
+
+    updateDateDisplay();
+
+}
+
+
+/* ==========================================================
+   INITIALIZE EXPENSE DATE PICKER
+========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        initializeExpenseDatePicker();
+
+    }
+);
+
+/* ==========================================================
    YUELLA BILL TRACKER
    REGISTER ACCOUNT
 ========================================================== */
