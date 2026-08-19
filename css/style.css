@@ -8171,10 +8171,11 @@ div{
 
     opacity:0 !important;
 
-    pointer-events:none !important;
+    z-index:2 !important;
+
+    cursor:pointer !important;
 
 }
-
 
 /* ==========================================================
    MOBILE
