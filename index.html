@@ -1091,7 +1091,7 @@
 
         </div>
 
-      <!-- =========================================
+    <!-- =========================================
      EXPENSE DATE
 ========================================== -->
 
@@ -1099,17 +1099,31 @@
 
     <label
         class="form-label"
-        for="expenseDate"
+        for="expenseDateDisplay"
     >
         Expense Date
     </label>
 
+
     <div class="expense-date-container">
+
+        <!-- VISIBLE DATE -->
+
+        <input
+            type="text"
+            id="expenseDateDisplay"
+            class="form-input expense-date-display"
+            placeholder="Select date"
+            readonly
+        >
+
+
+        <!-- REAL DATE VALUE -->
 
         <input
             type="date"
             id="expenseDate"
-            class="form-input"
+            class="expense-date-native"
             required
         >
 
