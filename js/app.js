@@ -1954,6 +1954,104 @@ if(
 }
 
 /* ==========================================================
+   CUSTOM EXPENSE DATE
+========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const dateDisplay =
+            document.getElementById(
+                "expenseDateDisplay"
+            );
+
+
+        const dateNative =
+            document.getElementById(
+                "expenseDate"
+            );
+
+
+        if(
+            !dateDisplay ||
+            !dateNative
+        ){
+
+            return;
+
+        }
+
+
+        /* ==================================================
+           OPEN DATE PICKER
+        ================================================== */
+
+        dateDisplay.addEventListener(
+            "click",
+            () => {
+
+                if(
+                    typeof dateNative.showPicker ===
+                    "function"
+                ){
+
+                    dateNative.showPicker();
+
+                }
+
+                else{
+
+                    dateNative.click();
+
+                }
+
+            }
+        );
+
+
+        /* ==================================================
+           UPDATE DISPLAY
+        ================================================== */
+
+        dateNative.addEventListener(
+            "change",
+            () => {
+
+                if(!dateNative.value){
+
+                    dateDisplay.value =
+                        "";
+
+                    return;
+
+                }
+
+
+                const date =
+                    new Date(
+                        dateNative.value +
+                        "T00:00:00"
+                    );
+
+
+                dateDisplay.value =
+                    date.toLocaleDateString(
+                        "en-US",
+                        {
+                            month:"short",
+                            day:"numeric",
+                            year:"numeric"
+                        }
+                    );
+
+            }
+        );
+
+    }
+);
+
+/* ==========================================================
    YUELLA BILL TRACKER
    REGISTER ACCOUNT
 ========================================================== */
