@@ -7866,3 +7866,49 @@ div{
     transform:scale(.94);
 
 }
+
+/* ==========================================================
+   EXPENSE CARD NOTES
+========================================================== */
+
+.expense-item{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+
+.expense-item-left{
+    flex:1;
+}
+
+
+.expense-item-right{
+    flex-shrink:0;
+}
+
+
+.expense-item-notes{
+    width:100%;
+    flex-basis:100%;
+    margin-top:12px;
+    padding:12px 0 0;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+
+.expense-item-notes span{
+    display:block;
+    margin-bottom:5px;
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    opacity:0.55;
+}
+
+
+.expense-item-notes p{
+    margin:0;
+    font-size:13px;
+    line-height:1.5;
+    word-break:break-word;
+}
