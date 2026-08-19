@@ -6694,62 +6694,63 @@ function renderExpenses(){
                     return `
 
     <div
-    class="expense-item"
-    data-expense-id="${expense.id || ""}"
-    data-notes="${escapeExpenseHTML(
-        expense.notes || "No notes."
-    )}"
->
+        class="expense-item"
+        data-expense-id="${expense.id || ""}"
+    >
 
         <div
-            class="expense-item-left"
+            class="expense-item-main"
         >
 
-            <h3>
-                ${escapeExpenseHTML(
-                    name
-                )}
-            </h3>
-
-
-            <p>
-
-                ${escapeExpenseHTML(
-                    category
-                )}
-
-                ${
-                    country
-                        ? " • " +
-                          escapeExpenseHTML(
-                              country
-                          )
-                        : ""
-                }
-
-            </p>
-
-
-            <small
-                class="expense-date-status"
+            <div
+                class="expense-item-left"
             >
 
-                ${escapeExpenseHTML(
-                    date
-                )}
-
-                <span>
-                    •
-                </span>
-
-                ${statusLabel}
-
-            </small>
-
-        </div>
+                <h3>
+                    ${escapeExpenseHTML(
+                        name
+                    )}
+                </h3>
 
 
-                               <div
+                <p>
+
+                    ${escapeExpenseHTML(
+                        category
+                    )}
+
+                    ${
+                        country
+                            ? " • " +
+                              escapeExpenseHTML(
+                                  country
+                              )
+                            : ""
+                    }
+
+                </p>
+
+
+                <small
+                    class="expense-date-status"
+                >
+
+                    ${escapeExpenseHTML(
+                        date
+                    )}
+
+                    <span>
+                        •
+                    </span>
+
+                    ${statusLabel}
+
+                </small>
+
+            </div>
+
+
+            <div
                 class="expense-item-right"
             >
 
@@ -6792,9 +6793,12 @@ function renderExpenses(){
 
             </div>
 
-
         </div>
 
+
+        <!-- ==========================================
+             NOTES
+        =========================================== -->
 
         <div
             class="expense-item-notes"
@@ -6813,6 +6817,8 @@ function renderExpenses(){
             </p>
 
         </div>
+
+    </div>
 
 `;
 
@@ -6836,9 +6842,9 @@ document.addEventListener(
             );
 
 
-        /* ==================================================
-           CLICKED OUTSIDE EXPENSE CARD
-        ================================================== */
+        /* ==============================================
+           CLICK OUTSIDE
+        ============================================== */
 
         if(!card){
 
@@ -6860,9 +6866,9 @@ document.addEventListener(
         }
 
 
-        /* ==================================================
-           IGNORE EDIT / DELETE BUTTON
-        ================================================== */
+        /* ==============================================
+           DO NOT TRIGGER CARD WHEN EDIT/DELETE
+        ============================================== */
 
         if(
             event.target.closest(
@@ -6879,9 +6885,9 @@ document.addEventListener(
         }
 
 
-        /* ==================================================
+        /* ==============================================
            GET NOTES
-        ================================================== */
+        ============================================== */
 
         const notes =
             card.querySelector(
@@ -6896,9 +6902,9 @@ document.addEventListener(
         }
 
 
-        /* ==================================================
-           CLOSE OTHER OPEN NOTES
-        ================================================== */
+        /* ==============================================
+           CLOSE OTHER CARDS
+        ============================================== */
 
         document
             .querySelectorAll(
@@ -6921,15 +6927,13 @@ document.addEventListener(
             );
 
 
-        /* ==================================================
-           TOGGLE CURRENT NOTES
-        ================================================== */
+        /* ==============================================
+           TOGGLE NOTES
+        ============================================== */
 
         if(
             notes.style.display ===
             "none"
-            ||
-            !notes.style.display
         ){
 
             notes.style.display =
