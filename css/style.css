@@ -8087,3 +8087,134 @@ div{
     }
 
 }
+
+/* ==========================================================
+   EXPENSE DATE
+   CUSTOM MOBILE DATE FIELD
+========================================================== */
+
+.expense-date-group{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    margin:0 0 18px 0 !important;
+    padding:0 !important;
+
+    box-sizing:border-box !important;
+
+}
+
+
+.expense-date-container{
+
+    position:relative;
+
+    width:100% !important;
+    max-width:100% !important;
+
+    height:48px !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    box-sizing:border-box !important;
+
+}
+
+
+/* ==========================================================
+   VISIBLE DATE
+========================================================== */
+
+.expense-date-display{
+
+    display:block !important;
+
+    width:100% !important;
+    max-width:100% !important;
+
+    min-width:0 !important;
+
+    height:48px !important;
+
+    margin:0 !important;
+
+    padding:0 42px 0 12px !important;
+
+    box-sizing:border-box !important;
+
+    text-align:center !important;
+
+    font-size:16px !important;
+
+    line-height:48px !important;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   NATIVE DATE PICKER
+========================================================== */
+
+.expense-date-native{
+
+    position:absolute !important;
+
+    top:0 !important;
+    left:0 !important;
+
+    width:100% !important;
+    height:48px !important;
+
+    opacity:0 !important;
+
+    pointer-events:none !important;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:600px){
+
+    .expense-date-group{
+
+        width:100% !important;
+        max-width:100% !important;
+
+        margin:0 0 18px 0 !important;
+
+    }
+
+
+    .expense-date-container{
+
+        width:100% !important;
+        max-width:100% !important;
+
+        height:48px !important;
+
+    }
+
+
+    .expense-date-display{
+
+        width:100% !important;
+        max-width:100% !important;
+
+        height:48px !important;
+
+        text-align:center !important;
+
+        line-height:48px !important;
+
+        font-size:16px !important;
+
+    }
+
+}
