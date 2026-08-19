@@ -1988,10 +1988,15 @@ document.addEventListener(
 
         dateDisplay.addEventListener(
             "click",
-            () => {
+            event => {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
 
                 /*
-                 * Desktop browsers
+                 * Use native picker when available.
                  */
 
                 if(
@@ -2003,33 +2008,35 @@ document.addEventListener(
 
                         dateNative.showPicker();
 
+                        return;
+
                     }
                     catch(error){
 
-                        dateNative.focus();
+                        console.log(
+                            "showPicker fallback:",
+                            error
+                        );
 
                     }
 
                 }
 
+
                 /*
-                 * iPhone / fallback
+                 * Fallback
                  */
 
-                else{
+                dateNative.focus();
 
-                    dateNative.focus();
-
-                    dateNative.click();
-
-                }
+                dateNative.click();
 
             }
         );
 
 
         /* ==================================================
-           UPDATE VISIBLE DATE
+           CHANGE DATE
         ================================================== */
 
         dateNative.addEventListener(
@@ -2083,8 +2090,7 @@ document.addEventListener(
 
 
         /* ==================================================
-           RESTORE EXISTING DATE
-           FOR EDIT EXPENSE
+           RESTORE DATE
         ================================================== */
 
         if(dateNative.value){
