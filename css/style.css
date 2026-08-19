@@ -7937,52 +7937,71 @@ div{
 }
 
 /* ==========================================================
-   IPHONE / IOS — EXPENSE DATE INPUT
+   EXPENSE DATE — MOBILE / IPHONE FIX
 ========================================================== */
 
-@supports (-webkit-touch-callout: none){
+.expense-date-group{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+}
 
-    #expenseDate{
 
+.expense-date-wrapper{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+}
+
+
+.expense-date-input{
+    display:block !important;
+
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+
+    box-sizing:border-box !important;
+
+    margin:0 !important;
+
+    -webkit-appearance:none !important;
+    appearance:none !important;
+
+    font-size:16px !important;
+}
+
+
+@media (max-width:600px){
+
+    .expense-date-group{
+        width:100% !important;
+        max-width:100% !important;
+        padding:0 !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+    }
+
+
+    .expense-date-wrapper{
+        width:100% !important;
+        max-width:100% !important;
+        overflow:hidden !important;
+    }
+
+
+    .expense-date-input{
         width:100% !important;
         max-width:100% !important;
         min-width:0 !important;
 
-        display:block !important;
-
-        flex:1 1 auto !important;
-
-        align-self:stretch !important;
-
-        box-sizing:border-box !important;
-
-        -webkit-appearance:none !important;
-        appearance:none !important;
-
-        font-size:16px !important;
-
         padding-left:12px !important;
         padding-right:12px !important;
 
-        margin:0 !important;
-
-        overflow:hidden !important;
-
-    }
-
-
-    #expenseDate::-webkit-date-and-time-value{
-
-        text-align:left;
-
-    }
-
-
-    #expenseDate::-webkit-calendar-picker-indicator{
-
-        margin:0;
-        padding:0;
-
+        box-sizing:border-box !important;
     }
 
 }
