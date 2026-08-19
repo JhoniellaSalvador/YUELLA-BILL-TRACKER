@@ -6694,9 +6694,12 @@ function renderExpenses(){
                     return `
 
     <div
-        class="expense-item"
-        data-expense-id="${expense.id || ""}"
-    >
+    class="expense-item"
+    data-expense-id="${expense.id || ""}"
+    data-notes="${escapeExpenseHTML(
+        expense.notes || "No notes."
+    )}"
+>
 
         <div
             class="expense-item-left"
@@ -6746,50 +6749,70 @@ function renderExpenses(){
         </div>
 
 
-        <div
-            class="expense-item-right"
-        >
-
-           <strong>
-
-    ${currency}
-
-    ${amount.toLocaleString(
-        "en-US",
-        {
-            maximumFractionDigits:0
-        }
-    )}
-
-</strong>
-
-
-            <div
-                class="expense-actions"
+                   <div
+                class="expense-item-right"
             >
 
-                <button
-                    type="button"
-                    class="expense-edit-button"
-                    data-id="${expense.id || ""}"
-                >
-                    Edit
-                </button>
+                <strong>
+
+                    ${currency}
+
+                    ${amount.toLocaleString(
+                        "en-US",
+                        {
+                            maximumFractionDigits:0
+                        }
+                    )}
+
+                </strong>
 
 
-                <button
-                    type="button"
-                    class="expense-delete-button"
-                    data-id="${expense.id || ""}"
+                <div
+                    class="expense-actions"
                 >
-                    Delete
-                </button>
+
+                    <button
+                        type="button"
+                        class="expense-edit-button"
+                        data-id="${expense.id || ""}"
+                    >
+                        Edit
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="expense-delete-button"
+                        data-id="${expense.id || ""}"
+                    >
+                        Delete
+                    </button>
+
+                </div>
 
             </div>
 
-        </div>
 
-    </div>
+            <div
+                class="expense-item-notes"
+                style="display:none;"
+            >
+
+                <span>
+                    Notes
+                </span>
+
+                <p>
+                    ${escapeExpenseHTML(
+                        expense.notes ||
+                        "No notes."
+                    )}
+                </p>
+
+            </div>
+
+
+        </div>
 
 `;
 
@@ -6798,6 +6821,130 @@ function renderExpenses(){
             .join("");
 
 }
+
+/* ==========================================================
+   EXPENSE CARD NOTES TOGGLE
+========================================================== */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        const card =
+            event.target.closest(
+                ".expense-item"
+            );
+
+
+        /* ==================================================
+           CLICKED OUTSIDE EXPENSE CARD
+        ================================================== */
+
+        if(!card){
+
+            document
+                .querySelectorAll(
+                    ".expense-item-notes"
+                )
+                .forEach(
+                    notes => {
+
+                        notes.style.display =
+                            "none";
+
+                    }
+                );
+
+            return;
+
+        }
+
+
+        /* ==================================================
+           IGNORE EDIT / DELETE BUTTON
+        ================================================== */
+
+        if(
+            event.target.closest(
+                ".expense-edit-button"
+            )
+            ||
+            event.target.closest(
+                ".expense-delete-button"
+            )
+        ){
+
+            return;
+
+        }
+
+
+        /* ==================================================
+           GET NOTES
+        ================================================== */
+
+        const notes =
+            card.querySelector(
+                ".expense-item-notes"
+            );
+
+
+        if(!notes){
+
+            return;
+
+        }
+
+
+        /* ==================================================
+           CLOSE OTHER OPEN NOTES
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".expense-item-notes"
+            )
+            .forEach(
+                otherNotes => {
+
+                    if(
+                        otherNotes !==
+                        notes
+                    ){
+
+                        otherNotes.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+
+        /* ==================================================
+           TOGGLE CURRENT NOTES
+        ================================================== */
+
+        if(
+            notes.style.display ===
+            "none"
+            ||
+            !notes.style.display
+        ){
+
+            notes.style.display =
+                "block";
+
+        }
+        else{
+
+            notes.style.display =
+                "none";
+
+        }
+
+    }
+);
 
 /* ==========================================================
    EXPENSE SEARCH
