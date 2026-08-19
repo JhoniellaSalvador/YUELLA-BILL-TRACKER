@@ -7937,17 +7937,52 @@ div{
 }
 
 /* ==========================================================
-   EXPENSE FORM — DATE INPUT ALIGNMENT
+   IPHONE / IOS — EXPENSE DATE INPUT
 ========================================================== */
 
-#expenseDate,
-#expenseAmount,
-#expenseCurrency,
-#expenseStatus,
-#expenseCountry,
-#expenseCategory,
-#expenseNotes{
-    width:100% !important;
-    max-width:100% !important;
-    box-sizing:border-box !important;
+@supports (-webkit-touch-callout: none){
+
+    #expenseDate{
+
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+
+        display:block !important;
+
+        flex:1 1 auto !important;
+
+        align-self:stretch !important;
+
+        box-sizing:border-box !important;
+
+        -webkit-appearance:none !important;
+        appearance:none !important;
+
+        font-size:16px !important;
+
+        padding-left:12px !important;
+        padding-right:12px !important;
+
+        margin:0 !important;
+
+        overflow:hidden !important;
+
+    }
+
+
+    #expenseDate::-webkit-date-and-time-value{
+
+        text-align:left;
+
+    }
+
+
+    #expenseDate::-webkit-calendar-picker-indicator{
+
+        margin:0;
+        padding:0;
+
+    }
+
 }
