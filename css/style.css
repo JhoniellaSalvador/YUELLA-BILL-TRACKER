@@ -7949,6 +7949,8 @@ div{
 
     box-sizing:border-box !important;
 
+    margin-bottom:16px !important;
+
 }
 
 
@@ -8000,7 +8002,7 @@ div{
 
         padding:0 12px !important;
 
-        line-height:48px !important;
+        line-height:normal !important;
 
         text-align:center !important;
 
@@ -8012,11 +8014,11 @@ div{
 
     .expense-date-input::-webkit-date-and-time-value{
 
-        min-height:48px !important;
+        min-height:0 !important;
 
-        height:48px !important;
+        height:auto !important;
 
-        line-height:48px !important;
+        line-height:normal !important;
 
         text-align:center !important;
 
@@ -8035,10 +8037,11 @@ div{
 
         width:100% !important;
         max-width:100% !important;
+        min-width:0 !important;
+
+        margin:0 0 16px 0 !important;
 
         padding:0 !important;
-
-        margin:0 !important;
 
     }
 
@@ -8055,6 +8058,7 @@ div{
 
         width:100% !important;
         max-width:100% !important;
+        min-width:0 !important;
 
         height:48px !important;
 
