@@ -1,6 +1,6 @@
 {
     "name": "Yuella Bill Tracker",
-    "short_name": "Yuella",
+    "short_name": "YUELLA",
     "description": "Mobile bills and expenses tracker",
     "start_url": "./index.html",
     "scope": "./",
