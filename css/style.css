@@ -7937,8 +7937,8 @@ div{
 }
 
 /* ==========================================================
-   EXPENSE DATE
-   FINAL RESPONSIVE FIX
+   YUELLA — EXPENSE DATE
+   CLEAN FINAL VERSION
 ========================================================== */
 
 .expense-date-group{
@@ -7956,19 +7956,15 @@ div{
 
 .expense-date-container{
 
-    position:relative;
-
     width:100% !important;
     max-width:100% !important;
 
-    height:48px !important;
+    min-width:0 !important;
 
     margin:0 !important;
     padding:0 !important;
 
     box-sizing:border-box !important;
-
-    overflow:hidden;
 
 }
 
@@ -7990,165 +7986,16 @@ div{
 
     box-sizing:border-box !important;
 
+    font-family:inherit !important;
+
     font-size:16px !important;
 
-}
-
-
-/* ==========================================================
-   IPHONE / IOS
-========================================================== */
-
-@supports (-webkit-touch-callout:none){
-
-    .expense-date-container{
-
-        width:100% !important;
-        max-width:100% !important;
-
-        height:48px !important;
-
-        overflow:hidden !important;
-
-    }
-
-
-    #expenseDate{
-
-        width:100% !important;
-        max-width:100% !important;
-
-        min-width:0 !important;
-
-        height:48px !important;
-
-        box-sizing:border-box !important;
-
-        padding:0 12px !important;
-
-        font-size:16px !important;
-
-        -webkit-appearance:none !important;
-        appearance:none !important;
-
-    }
-
-
-    #expenseDate::-webkit-date-and-time-value{
-
-        display:block !important;
-
-        width:100% !important;
-
-        text-align:center !important;
-
-    }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width:600px){
-
-    .expense-date-group{
-
-        width:100% !important;
-        max-width:100% !important;
-
-        margin:0 0 18px 0 !important;
-
-    }
-
-
-    .expense-date-container{
-
-        width:100% !important;
-        max-width:100% !important;
-
-        height:48px !important;
-
-    }
-
-
-    #expenseDate{
-
-        width:100% !important;
-        max-width:100% !important;
-
-        min-width:0 !important;
-
-        height:48px !important;
-
-        box-sizing:border-box !important;
-
-    }
-
-}
-
-/* ==========================================================
-   EXPENSE DATE
-   CUSTOM MOBILE DATE FIELD
-========================================================== */
-
-.expense-date-group{
-
-    width:100% !important;
-    max-width:100% !important;
-
-    margin:0 0 18px 0 !important;
-    padding:0 !important;
-
-    box-sizing:border-box !important;
-
-}
-
-
-.expense-date-container{
-
-    position:relative;
-
-    width:100% !important;
-    max-width:100% !important;
-
-    height:48px !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    box-sizing:border-box !important;
-
-}
-
-
-/* ==========================================================
-   VISIBLE DATE
-========================================================== */
-
-.expense-date-display{
-
-    display:block !important;
-
-    width:100% !important;
-    max-width:100% !important;
-
-    min-width:0 !important;
-
-    height:48px !important;
-
-    margin:0 !important;
-
-    padding:0 42px 0 12px !important;
-
-    box-sizing:border-box !important;
+    line-height:normal !important;
 
     text-align:center !important;
 
-    font-size:16px !important;
-
-    line-height:48px !important;
+    -webkit-appearance:auto !important;
+    appearance:auto !important;
 
     cursor:pointer;
 
@@ -8156,78 +8003,39 @@ div{
 
 
 /* ==========================================================
-   NATIVE DATE INPUT
+   IOS
 ========================================================== */
 
-.expense-date-container{
+@supports (-webkit-touch-callout:none){
 
-    position:relative !important;
+    #expenseDate{
 
-    width:100% !important;
-    max-width:100% !important;
+        width:100% !important;
+        max-width:100% !important;
 
-    height:48px !important;
+        min-width:0 !important;
 
-    box-sizing:border-box !important;
+        height:48px !important;
 
-}
+        margin:0 !important;
 
+        padding:0 12px !important;
 
-/* ==========================================================
-   NATIVE DATE INPUT
-   IOS + DESKTOP
-========================================================== */
+        box-sizing:border-box !important;
 
-.expense-date-native{
+        font-size:16px !important;
 
-    position:absolute !important;
+        -webkit-appearance:auto !important;
+        appearance:auto !important;
 
-    top:0 !important;
-    left:0 !important;
-
-    width:100% !important;
-    height:48px !important;
-
-    opacity:0.01 !important;
-
-    z-index:10 !important;
-
-    border:0 !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    cursor:pointer !important;
-
-    box-sizing:border-box !important;
-
-}
+    }
 
 
-/* ==========================================================
-   VISIBLE DATE DISPLAY
-========================================================== */
+    #expenseDate::-webkit-date-and-time-value{
 
-.expense-date-display{
+        text-align:center !important;
 
-    position:relative !important;
-
-    z-index:5 !important;
-
-    width:100% !important;
-    max-width:100% !important;
-
-    height:48px !important;
-
-    box-sizing:border-box !important;
-
-    text-align:center !important;
-
-    line-height:48px !important;
-
-    font-size:16px !important;
-
-    pointer-events:none !important;
+    }
 
 }
 
@@ -8245,6 +8053,8 @@ div{
 
         margin:0 0 18px 0 !important;
 
+        padding:0 !important;
+
     }
 
 
@@ -8253,52 +8063,36 @@ div{
         width:100% !important;
         max-width:100% !important;
 
-        height:48px !important;
+        min-width:0 !important;
 
-        position:relative !important;
+        margin:0 !important;
+        padding:0 !important;
 
-    }
-
-
-    .expense-date-native{
-
-        position:absolute !important;
-
-        top:0 !important;
-        left:0 !important;
-
-        width:100% !important;
-        height:48px !important;
-
-        opacity:0.01 !important;
-
-        z-index:10 !important;
-
-        pointer-events:auto !important;
+        box-sizing:border-box !important;
 
     }
 
 
-    .expense-date-display{
+    #expenseDate{
 
-        position:relative !important;
-
-        z-index:5 !important;
+        display:block !important;
 
         width:100% !important;
         max-width:100% !important;
 
+        min-width:0 !important;
+
         height:48px !important;
+
+        margin:0 !important;
+
+        padding:0 12px !important;
 
         box-sizing:border-box !important;
 
-        text-align:center !important;
-
-        line-height:48px !important;
-
         font-size:16px !important;
 
-        pointer-events:none !important;
+        text-align:center !important;
 
     }
 
