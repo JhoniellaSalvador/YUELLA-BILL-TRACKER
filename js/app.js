@@ -1966,12 +1966,10 @@ document.addEventListener(
                 "expenseDateDisplay"
             );
 
-
         const dateNative =
             document.getElementById(
                 "expenseDate"
             );
-
 
         if(
             !dateDisplay ||
@@ -1991,20 +1989,9 @@ document.addEventListener(
             "click",
             () => {
 
-                if(
-                    typeof dateNative.showPicker ===
-                    "function"
-                ){
+                dateNative.focus();
 
-                    dateNative.showPicker();
-
-                }
-
-                else{
-
-                    dateNative.click();
-
-                }
+                dateNative.click();
 
             }
         );
@@ -2033,6 +2020,17 @@ document.addEventListener(
                         dateNative.value +
                         "T00:00:00"
                     );
+
+
+                if(
+                    Number.isNaN(
+                        date.getTime()
+                    )
+                ){
+
+                    return;
+
+                }
 
 
                 dateDisplay.value =
