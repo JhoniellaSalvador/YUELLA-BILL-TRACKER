@@ -7937,63 +7937,127 @@ div{
 }
 
 /* ==========================================================
-   EXPENSE DATE — MOBILE / IPHONE FIX
+   EXPENSE DATE
+   MOBILE / IPHONE
 ========================================================== */
 
 .expense-date-group{
+
     width:100% !important;
     max-width:100% !important;
     min-width:0 !important;
+
     box-sizing:border-box !important;
+
 }
 
 
 .expense-date-wrapper{
+
     width:100% !important;
     max-width:100% !important;
     min-width:0 !important;
+
     box-sizing:border-box !important;
+
     overflow:hidden !important;
+
 }
 
 
 .expense-date-input{
+
     display:block !important;
 
     width:100% !important;
     max-width:100% !important;
     min-width:0 !important;
 
-    box-sizing:border-box !important;
+    height:48px !important;
 
     margin:0 !important;
+
+    padding:0 12px !important;
+
+    box-sizing:border-box !important;
+
+    font-size:16px !important;
+
+    text-align:center !important;
+    text-align-last:center !important;
 
     -webkit-appearance:none !important;
     appearance:none !important;
 
-    font-size:16px !important;
 }
 
+
+/* ==========================================================
+   IPHONE / IOS
+========================================================== */
+
+@supports (-webkit-touch-callout:none){
+
+    .expense-date-input{
+
+        width:100% !important;
+        max-width:100% !important;
+        min-width:0 !important;
+
+        text-align:center !important;
+        text-align-last:center !important;
+
+    }
+
+
+    .expense-date-input::-webkit-date-and-time-value{
+
+        text-align:center !important;
+
+    }
+
+
+    .expense-date-input::-webkit-calendar-picker-indicator{
+
+        margin:0;
+        padding:0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
 
 @media (max-width:600px){
 
     .expense-date-group{
+
         width:100% !important;
         max-width:100% !important;
+        min-width:0 !important;
+
         padding:0 !important;
+
         margin-left:0 !important;
         margin-right:0 !important;
+
     }
 
 
     .expense-date-wrapper{
+
         width:100% !important;
         max-width:100% !important;
-        overflow:hidden !important;
+        min-width:0 !important;
+
     }
 
 
     .expense-date-input{
+
         width:100% !important;
         max-width:100% !important;
         min-width:0 !important;
@@ -8002,6 +8066,9 @@ div{
         padding-right:12px !important;
 
         box-sizing:border-box !important;
+
+        text-align:center !important;
+
     }
 
 }
