@@ -7938,7 +7938,7 @@ div{
 
 /* ==========================================================
    EXPENSE DATE
-   MOBILE / IPHONE
+   EXACT FORM INPUT SIZE
 ========================================================== */
 
 .expense-date-group{
@@ -7947,9 +7947,11 @@ div{
     max-width:100% !important;
     min-width:0 !important;
 
-    box-sizing:border-box !important;
+    margin:0 0 16px 0 !important;
 
-    margin-bottom:16px !important;
+    padding:0 !important;
+
+    box-sizing:border-box !important;
 
 }
 
@@ -7959,6 +7961,9 @@ div{
     width:100% !important;
     max-width:100% !important;
     min-width:0 !important;
+
+    margin:0 !important;
+    padding:0 !important;
 
     box-sizing:border-box !important;
 
@@ -8000,27 +8005,38 @@ div{
 
         height:48px !important;
 
+        margin:0 !important;
+
         padding:0 12px !important;
 
-        line-height:normal !important;
+        box-sizing:border-box !important;
 
         text-align:center !important;
 
-        -webkit-appearance:auto !important;
-        appearance:auto !important;
+        -webkit-appearance:none !important;
+        appearance:none !important;
 
     }
 
 
     .expense-date-input::-webkit-date-and-time-value{
 
-        min-height:0 !important;
-
-        height:auto !important;
-
-        line-height:normal !important;
+        width:100% !important;
 
         text-align:center !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+    }
+
+
+    .expense-date-input::-webkit-calendar-picker-indicator{
+
+        margin:0 !important;
+
+        padding:0 !important;
 
     }
 
@@ -8037,7 +8053,6 @@ div{
 
         width:100% !important;
         max-width:100% !important;
-        min-width:0 !important;
 
         margin:0 0 16px 0 !important;
 
@@ -8051,6 +8066,9 @@ div{
         width:100% !important;
         max-width:100% !important;
 
+        margin:0 !important;
+        padding:0 !important;
+
     }
 
 
@@ -8058,6 +8076,7 @@ div{
 
         width:100% !important;
         max-width:100% !important;
+
         min-width:0 !important;
 
         height:48px !important;
