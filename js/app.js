@@ -1971,6 +1971,7 @@ document.addEventListener(
                 "expenseDate"
             );
 
+
         if(
             !dateDisplay ||
             !dateNative
@@ -1989,23 +1990,57 @@ document.addEventListener(
             "click",
             () => {
 
-                dateNative.focus();
+                /*
+                 * Desktop browsers
+                 */
 
-                dateNative.click();
+                if(
+                    typeof dateNative.showPicker ===
+                    "function"
+                ){
+
+                    try{
+
+                        dateNative.showPicker();
+
+                    }
+                    catch(error){
+
+                        dateNative.focus();
+
+                    }
+
+                }
+
+                /*
+                 * iPhone / fallback
+                 */
+
+                else{
+
+                    dateNative.focus();
+
+                    dateNative.click();
+
+                }
 
             }
         );
 
 
         /* ==================================================
-           UPDATE DISPLAY
+           UPDATE VISIBLE DATE
         ================================================== */
 
         dateNative.addEventListener(
             "change",
             () => {
 
-                if(!dateNative.value){
+                const value =
+                    dateNative.value;
+
+
+                if(!value){
 
                     dateDisplay.value =
                         "";
@@ -2017,7 +2052,7 @@ document.addEventListener(
 
                 const date =
                     new Date(
-                        dateNative.value +
+                        value +
                         "T00:00:00"
                     );
 
@@ -2045,6 +2080,41 @@ document.addEventListener(
 
             }
         );
+
+
+        /* ==================================================
+           RESTORE EXISTING DATE
+           FOR EDIT EXPENSE
+        ================================================== */
+
+        if(dateNative.value){
+
+            const date =
+                new Date(
+                    dateNative.value +
+                    "T00:00:00"
+                );
+
+
+            if(
+                !Number.isNaN(
+                    date.getTime()
+                )
+            ){
+
+                dateDisplay.value =
+                    date.toLocaleDateString(
+                        "en-US",
+                        {
+                            month:"short",
+                            day:"numeric",
+                            year:"numeric"
+                        }
+                    );
+
+            }
+
+        }
 
     }
 );
