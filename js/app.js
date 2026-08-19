@@ -6749,7 +6749,7 @@ function renderExpenses(){
         </div>
 
 
-                   <div
+                               <div
                 class="expense-item-right"
             >
 
@@ -6793,24 +6793,24 @@ function renderExpenses(){
             </div>
 
 
-            <div
-                class="expense-item-notes"
-                style="display:none;"
-            >
+        </div>
 
-                <span>
-                    Notes
-                </span>
 
-                <p>
-                    ${escapeExpenseHTML(
-                        expense.notes ||
-                        "No notes."
-                    )}
-                </p>
+        <div
+            class="expense-item-notes"
+            style="display:none;"
+        >
 
-            </div>
+            <span>
+                Notes
+            </span>
 
+            <p>
+                ${escapeExpenseHTML(
+                    expense.notes ||
+                    "No notes."
+                )}
+            </p>
 
         </div>
 
