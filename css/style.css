@@ -7969,20 +7969,23 @@ div{
 }
 
 
+/* ==========================================================
+   EXPENSE DATE — BASE
+========================================================== */
+
 #expenseDate{
 
     display:block !important;
 
     width:100% !important;
     max-width:100% !important;
-
     min-width:0 !important;
 
     height:48px !important;
 
     margin:0 !important;
 
-    padding:0 12px !important;
+    padding:0 10px !important;
 
     box-sizing:border-box !important;
 
@@ -7990,7 +7993,7 @@ div{
 
     font-size:16px !important;
 
-    line-height:normal !important;
+    line-height:48px !important;
 
     text-align:center !important;
 
@@ -8001,14 +8004,15 @@ div{
 
 }
 
-
 /* ==========================================================
-   IOS
+   EXPENSE DATE — IPHONE / IOS
 ========================================================== */
 
 @supports (-webkit-touch-callout:none){
 
     #expenseDate{
+
+        display:block !important;
 
         width:100% !important;
         max-width:100% !important;
@@ -8019,11 +8023,13 @@ div{
 
         margin:0 !important;
 
-        padding:0 12px !important;
+        padding:0 !important;
 
         box-sizing:border-box !important;
 
         font-size:16px !important;
+
+        line-height:48px !important;
 
         -webkit-appearance:auto !important;
         appearance:auto !important;
@@ -8033,12 +8039,27 @@ div{
 
     #expenseDate::-webkit-date-and-time-value{
 
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:center !important;
+
+        width:100% !important;
+
+        height:48px !important;
+
+        min-height:48px !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
         text-align:center !important;
 
     }
 
 }
-
 
 /* ==========================================================
    MOBILE
