@@ -8062,7 +8062,7 @@ div{
 }
 
 /* ==========================================================
-   MOBILE
+   EXPENSE DATE — MOBILE
 ========================================================== */
 
 @media (max-width:600px){
@@ -8086,6 +8086,8 @@ div{
 
         min-width:0 !important;
 
+        height:48px !important;
+
         margin:0 !important;
         padding:0 !important;
 
@@ -8107,11 +8109,13 @@ div{
 
         margin:0 !important;
 
-        padding:0 12px !important;
+        padding:0 !important;
 
         box-sizing:border-box !important;
 
         font-size:16px !important;
+
+        line-height:48px !important;
 
         text-align:center !important;
 
