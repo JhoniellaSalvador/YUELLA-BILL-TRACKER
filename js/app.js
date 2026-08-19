@@ -829,8 +829,13 @@ function initializeExpenseCategoryFilter(){
             },
 
             {
-                value: "insurance",
-                text: "Insurance"
+               value: "insurance",
+               text: "Insurance"
+            },
+
+            {
+               value: "others",
+               text: "Others"
             }
 
         ],
@@ -860,7 +865,12 @@ function initializeExpenseCategoryFilter(){
             {
                 value: "water",
                 text: "Water"
-            }
+            },
+
+           {
+                value: "others",
+                text: "Others"
+           }
 
         ]
 
