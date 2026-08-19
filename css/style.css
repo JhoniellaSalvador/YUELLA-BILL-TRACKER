@@ -7868,30 +7868,28 @@ div{
 }
 
 /* ==========================================================
-   EXPENSE CARD NOTES
+   EXPENSE CARD LAYOUT
 ========================================================== */
 
 .expense-item{
+    display:block;
+}
+
+
+.expense-item-main{
+    width:100%;
     display:flex;
-    flex-wrap:wrap;
-}
-
-
-.expense-item-left{
-    flex:1;
-}
-
-
-.expense-item-right{
-    flex-shrink:0;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
 }
 
 
 .expense-item-notes{
+    display:none;
     width:100%;
-    flex-basis:100%;
     margin-top:12px;
-    padding:12px 0 0;
+    padding-top:12px;
     border-top:1px solid rgba(255,255,255,0.08);
 }
 
